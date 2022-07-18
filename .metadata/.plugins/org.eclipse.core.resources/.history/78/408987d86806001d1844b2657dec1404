@@ -1,0 +1,6 @@
+package com.chainsys.main;
+
+public class FirstClass {
+	public int num1 = 10;
+	public int num2 = 10;
+}

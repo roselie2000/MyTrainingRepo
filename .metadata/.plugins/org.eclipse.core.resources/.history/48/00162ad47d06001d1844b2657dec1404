@@ -1,0 +1,12 @@
+package com.chainsys.main;
+
+import java.util.Scanner;
+
+public class FirstClass {
+	public int num1 = 20;
+	public int num2 = 10;
+	Scanner sn= new Scanner(System.in);
+	sc.nextInt();
+	
+	
+}
