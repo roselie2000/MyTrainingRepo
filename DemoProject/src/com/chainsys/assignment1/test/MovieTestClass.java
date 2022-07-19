@@ -1,4 +1,4 @@
-package com.chainsys.assignment1Test;
+package com.chainsys.assignment1.test;
 
 import com.chainsys.assignment1.MovieClass;
 
