@@ -9,6 +9,7 @@ public class Test {
 		System.out.println(fc.num1*fc.num2);
 		System.out.println(fc.num1/fc.num2);
 		System.out.println(fc.num1%fc.num2);
+		System.out.println();
 	}
 
 }

@@ -1,8 +1,9 @@
-package com.chainsys.assignment1;
+package com.chainsys.day2;
 
 import java.util.Scanner;
 
-public class ShopManagement {
+public class ShopMgmtSystem {
+	
 	public static void main(String[] args) {
 		Scanner sn = new Scanner(System.in);
 		
@@ -14,16 +15,11 @@ public class ShopManagement {
 		System.out.println(total);
 		
 		// Check whether the total value is greater than 1000 and calculate the discount
-		if(total > 1000) {
-			float discount = (total * 10) / 100;
-			float amount = total - discount;
-			System.out.println("Discount :" + discount);
-			System.out.println("Amount :" + amount);
-		}
-		else {
-			System.out.println("Discount : 0 ");
-			System.out.println("Amount :" + total);
-		}
-
-		}
+		int discount = total > 1000 ? (total * 10) / 100 : 0;
+		float amount = total - discount;
+		System.out.println("Discount :" + discount);
+		System.out.println("Amount :" + amount);
+		
+		ShopMgmtSystem sms = new ShopMgmtSystem();
+	}
 }

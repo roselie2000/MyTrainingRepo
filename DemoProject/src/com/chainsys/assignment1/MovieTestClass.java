@@ -3,12 +3,16 @@ package com.chainsys.assignment1;
 public class MovieTestClass {
 
 	public static void main(String[] args) {
-		MovieClass mc = new MovieClass();
+		MovieClass mc = new MovieClass();// Object creation for the class BookClass
+		
+		// Initialization
 		mc.movieName = "Bigil";
 		mc.directorName = "Atlee";
 		mc.producerName = "Sun Pictures";
 		mc.heroName = "Vijay";
 		mc.herionName = "Nayanthara";
+		
+		// Print the values
 		System.out.println(mc.movieName);
 		System.out.println(mc.directorName);
 		System.out.println(mc.producerName);
