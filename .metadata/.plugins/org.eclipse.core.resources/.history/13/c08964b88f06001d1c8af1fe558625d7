@@ -1,0 +1,15 @@
+package com.chainsys.main;
+
+public class MovieTestClass {
+
+	public static void main(String[] args) {
+		MovieClass mc = new MovieClass();
+		System.out.println(mc.movieName);
+		System.out.println(mc.heroName);
+		System.out.println(mc.herionName);
+		System.out.println(mc.directorName);
+		System.out.println(mc.producerName);
+
+	}
+
+}

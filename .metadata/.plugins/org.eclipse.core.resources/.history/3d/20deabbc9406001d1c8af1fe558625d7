@@ -1,0 +1,13 @@
+package com.chainsys.assignment1;
+
+public class HospitalTestClass {
+
+	public static void main(String[] args) {
+		HospitalClass hc = new HospitalClass();
+		hc.hospitalName = "Apollo Hospital";
+		hc.hospitalFounder = "Prathap C. Reddy";
+		hc.special = "Organ Transplantation";
+
+	}
+
+}

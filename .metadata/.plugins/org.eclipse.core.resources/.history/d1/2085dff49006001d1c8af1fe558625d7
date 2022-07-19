@@ -1,0 +1,9 @@
+package com.chainsys.main;
+
+public class BookClass {
+	String bookname;
+	int edition;
+	String authorName;
+	String Publisher;
+	
+}

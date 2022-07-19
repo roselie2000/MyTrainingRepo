@@ -1,0 +1,7 @@
+package com.chainsys.assignment2.test;
+
+public class BookClassTest {
+	public static void main(String args []) {
+		
+	}
+}

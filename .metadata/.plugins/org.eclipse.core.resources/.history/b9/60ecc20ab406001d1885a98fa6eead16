@@ -1,0 +1,32 @@
+package com.chainsys.assignment1;
+
+import java.util.Scanner;
+
+public class AttendenceCalculator {
+
+	public static void main(String[] args) {
+		
+//		int perAttendence = 5;
+		
+		Scanner sn = new Scanner(System.in);
+		
+		System.out.println("Enter no of classes helded :");
+		int heldClasses = sn.nextInt();
+		
+		System.out.println("Enter no of addended classes :");
+		int attendClasses = sn.nextInt();
+		
+		int perAttendence = attendClasses/heldClasses;
+		
+		System.out.println("No of Classes helded :" + heldClasses);
+		System.out.println("No of Attended Classes :" + attendClasses);
+		System.out.println("Percentage of Attendance :" + perAttendence);
+		
+		if(perAttendence > 75) {
+			System.out.println("Your eligible for examination. Please go and attend the examination");
+		}
+		else {
+			System.out.println("Your percentage of Attendence is too low So your are not for attend the class");
+		}
+	}
+}

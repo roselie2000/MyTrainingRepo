@@ -1,0 +1,31 @@
+package com.chainsys.assignment2;
+
+import java.util.Scanner;
+
+public class LoopConcept {
+	public static void main(String args []) {
+		for(int i = 0; i > 10; i++) {
+			System.out.println(i);
+		}
+		System.out.println("While Loop");
+		int sum = 100;
+		while(sum > 0) {
+			sum -= 20;
+			System.out.println(sum);
+		}
+		System.out.println("Do While Loop");
+		String user = "Roselie";
+		String password = "123chain";
+		String msg = null;
+		do {
+			Scanner sn = new Scanner(System.in);
+			System.out.println("Enter username :");
+			user = sn.nextLine();
+			System.out.println("Enter password :");
+			password = sn.nextLine();
+			if(user == "Roselie" && password == "123chain") {
+				msg = "True";
+			}
+		}while(msg == "True");
+	}
+}

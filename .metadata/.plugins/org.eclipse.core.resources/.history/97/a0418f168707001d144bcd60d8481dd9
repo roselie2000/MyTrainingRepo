@@ -1,0 +1,10 @@
+package com.chainsys.assignment2.test;
+
+import com.chainsys.assignment2.Attendance;
+
+public class AttendanceTest {
+	public static void main(String args []) {
+		Attendance att = new Attendance();
+		
+	}
+}

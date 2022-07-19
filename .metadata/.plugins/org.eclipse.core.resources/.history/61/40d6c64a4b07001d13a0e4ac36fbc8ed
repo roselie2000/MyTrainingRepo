@@ -1,0 +1,34 @@
+package com.chainsys.assignment2.shopmanagement;
+
+import java.util.Scanner;
+
+public class BillingMgmt {
+	
+	//data members of BillingMgmt
+	int quantity = 0;
+	int price = 0;
+	int sum = 0;
+	
+	//Getting the quantity and price from the user
+	public void getinfo() {
+		char msg = 'y';
+		Scanner sn = new Scanner(System.in);
+		
+		/* Here the while ask the user for continue the process
+		 * Until the end of the process the user want to enter the quantity and price */
+		
+		while(msg == 'y') {
+			System.out.println("Enter the quantity of the product");
+			quantity = sn.nextInt();
+			
+			System.out.println("Enter the price of the product");
+			quantity = sn.nextInt();
+		}
+	}
+	// Calculating the total price of purchased product
+	public int priceCalc() {
+		int total = quantity * price;
+		return total;
+	}
+
+}

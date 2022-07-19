@@ -1,0 +1,10 @@
+package com.chainsys.assignment2.test;
+
+import com.chainsys.assignment1.BookClass;
+
+public class BookClassTest {
+	public static void main(String args []) {
+		BookClass bc = new BookClass();
+		bc.
+	}
+}

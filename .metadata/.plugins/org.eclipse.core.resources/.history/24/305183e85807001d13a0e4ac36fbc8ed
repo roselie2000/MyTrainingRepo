@@ -1,0 +1,18 @@
+package com.chainsys.assignment2;
+
+public class BookClass {
+	// Members of Book Class
+	public String authorName;
+	public String publisher;
+	public int publicationDate;
+	
+	public void book(String bookname, int edition) {
+		System.out.println("Book Name :" + bookname);
+		System.out.println("Edition :" + edition);
+	}
+
+	public String publisher() {
+		String pub = "World Universities";
+		return pub;
+	}
+}

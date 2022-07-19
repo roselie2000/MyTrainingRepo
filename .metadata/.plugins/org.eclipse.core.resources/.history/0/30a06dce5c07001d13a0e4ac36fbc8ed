@@ -1,0 +1,14 @@
+package com.chainsys.assignment2.test;
+
+import com.chainsys.assignment1.HospitalClass;
+import com.chainsys.assignment2.BookClass;
+
+public class HospitalClassTest {
+	public static void main(String[] args) {
+		HospitalClass hc = new HospitalClass();
+		hc.hospital("Apollo");
+		bc.author();
+		System.out.println("Publisher :" + bc.publisher());
+		System.out.println("Published Date :" + bc.publicationDate("Wing of Fires"));
+	}
+}

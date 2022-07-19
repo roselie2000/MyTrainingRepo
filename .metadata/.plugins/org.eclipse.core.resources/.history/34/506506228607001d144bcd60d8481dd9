@@ -1,0 +1,14 @@
+package com.chainsys.assignment2.test;
+
+import com.chainsys.assignment2.MovieClass;
+import com.chainsys.assignment2.HospitalClass;
+
+public class MovieClassTest {
+	public static void main(String[] args) {
+		MovieClass mc = new MovieClass();
+		mc.movie("Bigil");
+		System.out.println("Producer :" + mc.producer());
+		mc.director();
+		System.out.println("Address :" + mc.hero("Apollo"));
+	}
+}

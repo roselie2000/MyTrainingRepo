@@ -1,0 +1,23 @@
+package com.chainsys.assignment2;
+
+import java.util.Scanner;
+
+public class Attendance {
+	
+	public void percentageCalc(double helded, double attended) {
+		
+	double perAttend; //Variable for hold the Percentage of Attendance.
+	
+	//Calculation of percentage of attend classes
+	perAttend = (attended / helded)*100;
+	System.out.println(perAttend);
+	
+	//Check whether the percentage is greater than 75
+	if (perAttend > 75) {
+		System.out.println("You are eligible for attend the Examination");
+	}
+	else {
+		System.out.println("You are not eligible for attend the Examination");
+	}
+}
+}

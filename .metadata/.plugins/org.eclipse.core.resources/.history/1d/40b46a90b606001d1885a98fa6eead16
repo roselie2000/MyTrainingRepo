@@ -1,0 +1,22 @@
+package com.chainsys.assignment1;
+
+import java.util.Scanner;
+
+public class AttendenceCalculator {
+
+	public static void main(String[] args) {
+		
+		int perAttend;
+		
+		Scanner sn = new Scanner(System.in);
+		
+		System.out.println("Number of Helded Classes :");
+		int heldClasses = sn.nextInt();
+		
+		System.out.println("Number of Attended Classes :");
+		int attendClasses = sn.nextInt();
+		
+		perAttend = 30 / 35;
+		System.out.println(perAttend);
+	}
+}

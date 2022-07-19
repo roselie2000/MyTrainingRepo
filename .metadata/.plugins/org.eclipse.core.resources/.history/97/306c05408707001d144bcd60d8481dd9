@@ -1,0 +1,12 @@
+package com.chainsys.assignment2.test;
+
+import java.util.Scanner;
+
+import com.chainsys.assignment2.Attendance;
+
+public class AttendanceTest {
+	public static void main(String args []) {
+		Attendance att = new Attendance();
+		Scanner an = new Scanner(System.in);
+	}
+}

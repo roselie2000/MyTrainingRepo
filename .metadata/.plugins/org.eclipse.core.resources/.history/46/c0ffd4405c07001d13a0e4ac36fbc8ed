@@ -1,0 +1,28 @@
+package com.chainsys.assignment2;
+
+public class HospitalClass {
+	public void hospital(String hospitalname, String founder) {
+		System.out.println("Hospital Name :" + hospitalname);
+		System.out.println("Hospital Founder Name :" + founder);
+	}
+
+	//Get Chief Doctor name
+	public String producer() {
+		String cdoctor = "Doctor. Latha Devi";
+		return cdoctor;
+	}
+	
+	//Get Director name
+	public void director() {
+		String direc = "Atlee";
+		System.out.println("Director name :" + direc);
+	}
+	
+	//Get Hero and Heroine 
+	public String Hero(String movie, String director) {
+		String hero = "Vijay";
+		String heroine = "Nayanthara";
+		return hero + heroine;
+		
+	}
+}

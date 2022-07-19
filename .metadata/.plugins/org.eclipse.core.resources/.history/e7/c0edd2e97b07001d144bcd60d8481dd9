@@ -1,0 +1,9 @@
+package com.chainsys.assignment2.test;
+
+import com.chainsys.assignment2.PlaceofService;
+
+public class PlaceofServiceTest {
+	public static void main(String args []) {
+		PlaceofService pos = new PlaceofService();
+	}
+}
