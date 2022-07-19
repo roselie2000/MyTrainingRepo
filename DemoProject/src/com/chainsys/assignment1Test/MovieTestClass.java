@@ -1,4 +1,6 @@
-package com.chainsys.assignment1;
+package com.chainsys.assignment1Test;
+
+import com.chainsys.assignment1.MovieClass;
 
 public class MovieTestClass {
 

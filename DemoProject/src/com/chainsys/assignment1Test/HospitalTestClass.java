@@ -1,4 +1,6 @@
-package com.chainsys.assignment1;
+package com.chainsys.assignment1Test;
+
+import com.chainsys.assignment1.HospitalClass;
 
 public class HospitalTestClass {
 
