@@ -9,7 +9,7 @@ public class BillingMgmt {
 	int price = 0;
 	
 	//Getting the quantity and price from the user
-	public void getinfo() {
+	public void getInfo() {
 		int msg = 1;
 		int sum = 0;
 		Scanner sn = new Scanner(System.in);

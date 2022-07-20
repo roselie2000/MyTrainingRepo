@@ -4,11 +4,11 @@ import com.chainsys.assignment2.ArithmeticOperation;
 
 public class ArithmeticOperationTest {
 	public static void main(String args []) {
-		ArithmeticOperation aop = new ArithmeticOperation();
-		aop.equal(2);
-		aop.notequal(2);
-		aop.andOperation(2,5);
-		aop.orOperation(2,0);
-		aop.Comparision(0);		
+		ArithmeticOperation aop = new ArithmeticOperation();//Creating object for ArithmeticOperation class
+		aop.equal(2); //Calling equal method
+		aop.notequal(2); //Calling notequal method
+		aop.andOperation(2,5); //Calling andOperation method
+		aop.orOperation(2,0); //Calling orOperation method
+		aop.Comparision(0);	//Calling equal method
 	}
 }

@@ -5,11 +5,11 @@ import com.chainsys.assignment2.BookClass;
 public class BookClassTest {
 
 	public static void main(String[] args) {
-		BookClass bc = new BookClass();
-		bc.book("Wings of Fires", 1);
-		bc.author();
-		System.out.println("Publisher :" + bc.publisher());
-		System.out.println("Published Date :" + bc.publicationDate("Wing of Fires"));
+		BookClass bc = new BookClass(); //Creating Object for BookClass Class
+		bc.book("Wings of Fires", 1); // Calling book method
+		bc.author(); //Calling author method
+		System.out.println("Publisher :" + bc.publisher()); //Calling publisher method
+		System.out.println("Published Date :" + bc.publicationDate("Wing of Fires"));// Calling publicationDate method
 	}
 
 }

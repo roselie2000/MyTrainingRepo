@@ -1,6 +1,8 @@
 package com.chainsys.assignment2;
 
 public class HospitalClass {
+	
+	//Get Hospital name and Founder of the Hospital
 	public void hospital(String hospitalname, String founder) {
 		System.out.println("Hospital Name :" + hospitalname);
 		System.out.println("Hospital Founder Name :" + founder);
