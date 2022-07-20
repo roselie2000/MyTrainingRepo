@@ -5,17 +5,18 @@ import java.util.Scanner;
 public class PlaceOfService {
 	Scanner sn = new Scanner(System.in);
 	
+	//Get all Information from the user
 	public String getInfo() {
-		System.out.println("Enter your Age :");
+		System.out.println("Enter your Age :");// Getting Age
 		int age = sn.nextInt();
 		
-		System.out.println("Enter your Sex (M / F):");
+		System.out.println("Enter your Sex (M / F):");// Getting Sex
 		String sex = sn.next();
 		
-		System.out.println("Enter your Marital Status (if yes then enter 'y' otherwise enter 'n'");
-		String maritalStatus = sn.next();
+		System.out.println("Enter your Marital Status (if yes then enter 'y' otherwise enter 'n'");// Getting Martial Status
+		String martialStatus = sn.next();
 		
-		String result = displayServicePlace(age, sex, maritalStatus);
+		String result = displayServicePlace(age, sex, martialStatus);// calling displayServicePlace function
 		return result;
 	}
 	

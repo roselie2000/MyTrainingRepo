@@ -3,6 +3,7 @@ package com.chainsys.assignment2;
 public class TaxCalculator {
 	int tax, tax1, tax2, tax3;
 	
+	//Calculating the tax
 	public void taxCalculator(int grossSalary, int savings) {
 		int taxableIncome = grossSalary - savings;
 		if(taxableIncome <= 100000) {

@@ -1,6 +1,8 @@
 package com.chainsys.assignment2;
 
 public class MovieClass {
+	
+	//Get Movie Name
 	public void movie(String moviename) {
 		System.out.println("Movie Name :" + moviename);
 	}
