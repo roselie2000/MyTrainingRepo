@@ -8,7 +8,7 @@ public class ArithmeticOperation {
 	}
 	
 	//Checking x != 5
-	public void notequal(int x) {
+	public void notEqual(int x) {
 		System.out.println(x != 5);
 	}
 	
@@ -23,7 +23,7 @@ public class ArithmeticOperation {
 	}
 	
 	//Checking !(y < 10)
-	public void Comparision(int y) {
+	public void comparision(int y) {
 		System.out.println(!(y < 10));
 	}
 }

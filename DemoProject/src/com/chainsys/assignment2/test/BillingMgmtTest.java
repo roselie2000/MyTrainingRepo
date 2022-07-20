@@ -1,6 +1,6 @@
-package com.chainsys.assignment2.shopmanagement.test;
+package com.chainsys.assignment2.test;
 
-import com.chainsys.assignment2.shopmanagement.BillingMgmt;
+import com.chainsys.assignment2.BillingMgmt;
 
 public class BillingMgmtTest {
 
