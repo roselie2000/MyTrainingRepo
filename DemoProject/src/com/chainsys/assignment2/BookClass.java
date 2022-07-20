@@ -3,8 +3,8 @@ package com.chainsys.assignment2;
 public class BookClass {
 	
 	//Get Book name and Edition
-	public void book(String bookname, int edition) {
-		System.out.println("Book Name :" + bookname);
+	public void book(String bookName, int edition) {
+		System.out.println("Book Name :" + bookName);
 		System.out.println("Edition :" + edition);
 	}
 

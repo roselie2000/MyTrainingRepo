@@ -30,7 +30,6 @@ public class MarkSheet {
 					System.out.println("Total: "+ sum);
 					int avg = sum/3;
 					System.out.println("Average: " + avg);
-					System.out.println(mark1 > mark2);
 					if (avg > 90) {
 						System.out.println("Grade A");
 					}
