@@ -18,13 +18,15 @@ public class Attendance {
 		}
 		else {
 			Scanner sn = new Scanner(System.in);
+			
 			System.out.println("Any Medical causes (for yes enter 'y' and for no enter 'n')  :");
 			char mediCauses = sn.next().charAt(0);
-			if (mediCauses == 'y') {
-				System.out.println("You are eligible for attend the Examination");
+			
+			if (mediCauses == 'y') { 
+				System.out.println("You are eligible for attend the Examination"); //if the user has medical causes then print eligible
 			}
 			else {
-				System.out.println("You are not eligible for attend the Examination");
+				System.out.println("You are not eligible for attend the Examination"); //if the user not has medical causes then print eligible
 			}
 		}
 }
