@@ -12,7 +12,7 @@ public class EvenDigitsTest {
 		
 		System.out.println("Enter a number :");
 		int number = sn.nextInt();
-		ed.evenDigits(number);
+		ed.getEvenDigits(number);
 
 	}
 

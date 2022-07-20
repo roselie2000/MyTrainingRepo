@@ -2,8 +2,10 @@ package com.chainsys.day3.assignment3;
 
 public class EvenDigitsClass {
 	int digit = 0;
-	public void evenDigits(int n) {
-		int num = 1234;
+	
+	//method for find the even digits of given number
+	public void getEvenDigits(int n) {
+		int num;
 		while(n > 0) {
 			num = n;
 			num = n % 10;
@@ -13,6 +15,5 @@ public class EvenDigitsClass {
 			digit += 1;
 			n = n / 10;
 		}
-		System.out.println();
 	}
 }

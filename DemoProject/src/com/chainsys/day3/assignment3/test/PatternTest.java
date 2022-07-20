@@ -6,5 +6,6 @@ public class PatternTest {
 	public static void main(String args []) {
 		PaternClass pc = new PaternClass();
 		pc.getTriangle();
+		pc.getDiamond();
 	}
 }
