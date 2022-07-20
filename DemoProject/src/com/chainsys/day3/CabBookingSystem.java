@@ -6,7 +6,7 @@ public class CabBookingSystem {
 	Scanner sn = new Scanner(System.in);
 	
 	//Data members
-	int noOfcab;
+	int noOfCab;
 	String cabType;
 	int distance;
 	int total = 0;
@@ -22,9 +22,10 @@ public class CabBookingSystem {
 	//method for getting user information
 	public void getInfo() {
 		System.out.println("How many Cab you want :");
-		noOfcab = sn.nextInt();
+		noOfCab = sn.nextInt();
+		System.out.println((noOfCab < 0) ? "Please enter valid number" : " ");
 		
-		for(int i=0; i < noOfcab; i++) {
+		for(int i=0; i < noOfCab; i++) {
 			System.out.println("Enter Type of Cab :");
 			String cabType = sn.next();
 			if(cabType.equals("mini")) {
@@ -45,18 +46,28 @@ public class CabBookingSystem {
 	public void miniCabFareCalculation() {
 		System.out.println("How many kilometers you want to go :");
 		distance = sn.nextInt();
-		int amount = 100 * distance;
-		total += amount;
-		System.out.println("Amount :" + amount);
+		if(distance <= 0) {
+			System.out.println("Please enter valid number");
+		}
+		else {
+			int amount = 100 * distance;
+			total += amount;
+			System.out.println("Amount :" + amount);
+		}
 	}
 	
 	//method for calculate the fare for big cab
 	public void bigCabFareCalculation() {
 		System.out.println("How many kilometers you want to go :");
 		int distance = sn.nextInt();
-		int amount = 150 * distance;
-		total += amount;
-		System.out.println("Amount :" + amount);
-		
+		if(distance <= 0) {
+			System.out.println("Please enter valid number");
+		}
+		else {
+			int amount = 150 * distance;
+			total += amount;
+			System.out.println("Amount :" + amount);
+		}	
 	}
+	
 }

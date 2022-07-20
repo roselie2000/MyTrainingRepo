@@ -9,29 +9,41 @@ public class MarkSheet {
 	public void markIncrement() {
 		System.out.println("Enter your mark :");
 		int mark = sn.nextInt();
-		System.out.println("Are you add mark for extra curricular activities (y/n) :");
-		String msg = sn.next();
-		if(msg.equals("y")) {
-			System.out.println(mark++);
-			System.out.println(++mark);
+		if(mark > 0) {
+			System.out.println("Are you add mark for extra curricular activities (y/n) :");
+			String msg = sn.next();
+			if(msg.equals("y")) {
+				System.out.println(mark++);
+				System.out.println(++mark);
+				markDecrement();
+			}
+			else {
+				System.out.println(mark);
+			}
 		}
 		else {
-			System.out.println(mark);
+			System.out.println("Please enter a valid mark");
 		}
+		
 	}
 	
 	//method for decrement the mark
 	public void markDecrement() {
 		System.out.println("Enter your mark :");
 		int mark = sn.nextInt();
-		System.out.println("Are you reduce mark for worst hand writting activities (y/n) :");
-		String msg = sn.next();
-		if(msg.equals("y")) {
-			System.out.println(mark--);
-			System.out.println(--mark);
+		if(mark > 0) {
+			System.out.println("Are you reduce mark for worst hand writting activities (y/n) :");
+			String msg = sn.next();
+			if(msg.equals("y")) {
+				System.out.println(mark--);
+				System.out.println(--mark);
+			}
+			else {
+				System.out.println(mark);
+			}
 		}
 		else {
-			System.out.println(mark);
+			System.out.println("Please enter a valid mark");
 		}
 	}
 		

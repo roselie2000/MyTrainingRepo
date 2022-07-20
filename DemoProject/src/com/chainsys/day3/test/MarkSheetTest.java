@@ -6,7 +6,6 @@ public class MarkSheetTest {
 	public static void main(String args []) {
 		MarkSheet ms = new MarkSheet(); //Object creation
 		ms.markIncrement();// calling markIncrement method
-		ms.markDecrement();// calling markDecrement method
 	}
 	
 }
