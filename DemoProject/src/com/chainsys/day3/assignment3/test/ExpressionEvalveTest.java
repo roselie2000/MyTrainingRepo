@@ -4,7 +4,7 @@ import com.chainsys.day3.assignment3.ExpressionEvalveClass;
 
 public class ExpressionEvalveTest {
 	public static void main(String args []) {
-		ExpressionEvalveClass eec = new ExpressionEvalveClass();
-		eec.evaluate();
+		ExpressionEvalveClass eec = new ExpressionEvalveClass();//object creation
+		eec.evaluate();// calling method
 	}
 }
