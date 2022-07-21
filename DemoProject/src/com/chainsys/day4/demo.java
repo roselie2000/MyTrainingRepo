@@ -23,7 +23,7 @@ public class demo {
 		char ch = concatstr.charAt(i);  
 		//compares the character of concatstr with i  
 		if(ch == c)  
-		//incerments the count by 1 if the specified condition returns true  
+		//Increments the count by 1 if the specified condition returns true  
 		count++;  
 		}  
 		//returns true if any of the condition returns true  
