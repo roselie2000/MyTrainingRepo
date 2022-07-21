@@ -6,11 +6,16 @@ public class QuesAnswerClass {
 	Scanner sn = new Scanner(System.in);
 	
 	public void getAnswer() {
+		
+		//Asking question to the user about rain
 		System.out.println("Is it raining?");
 		String answer = sn.next();
+		
 		if (answer.equals("y")) {
 			System.out.println("Please get an umbrella.");
 		}
+		
+		//Asking question to the user about temperature
 		System.out.println("Enter the current surrounding tenperature :");
 		int temperature = sn.nextInt();
 		if(temperature <= 32) {
