@@ -1,41 +1,39 @@
 package com.chainsys.day4;
 
-import java.util.Scanner;
+import java.util.Arrays;
 
-public class demo {
-	public static void main(String args []) {
-		int num, n2, n3;      
-		Scanner sc=new Scanner(System.in);  
-		System.out.print("Enter any Number: ");  
-		num = sc.nextInt();  
-		n2 = num * 2;  
-		n3 = num * 3;  
-		//concatenating num, n2, and n3  
-		String concatstr = num + "" + n2 + n3;  
-		boolean found = true;  
-		//checks all digits from 1 to 9 are present or not  
-		for(char c = '1'; c <= '9'; c++)  
-		{  
-		int count = 0;  
-		//loop counts the frequency of each digit  
-		for(int i = 0; i < concatstr.length(); i++)  
-		{  
-		char ch = concatstr.charAt(i);  
-		//compares the character of concatstr with i  
-		if(ch == c)  
-		//Increments the count by 1 if the specified condition returns true  
-		count++;  
-		}  
-		//returns true if any of the condition returns true  
-		if(count > 1 || count == 0)  
-		{  
-		found = false;  
-		break;  
-		}  
-		}  
-		if(found)  
-		System.out.println(num + " is a fascinating number.");  
-		else  
-		System.out.println(num + " is not a fascinating number.");  
-		}   
+class Main {
+  public static void main(String[] args) {
+    String str1 = "Race";
+    String str2 = "Care";
+    
+    str1 = str1.toLowerCase();
+    str2 = str2.toLowerCase();
+
+    // check if length is same
+    if(str1.length() == str2.length()) {
+
+      // convert strings to char array
+      char[] charArray1 = str1.toCharArray();
+      char[] charArray2 = str2.toCharArray();
+
+      // sort the char array
+      Arrays.sort(charArray1);
+      Arrays.sort(charArray2);
+
+      // if sorted char arrays are same
+      // then the string is anagram
+      boolean result = Arrays.equals(charArray1, charArray2);
+
+      if(result) {
+        System.out.println(str1 + " and " + str2 + " are anagram.");
+      }
+      else {
+        System.out.println(str1 + " and " + str2 + " are not anagram.");
+      }
+    }
+    else {
+      System.out.println(str1 + " and " + str2 + " are not anagram.");
+    }
+  }
 }
