@@ -2,6 +2,7 @@ package com.chainsys.day6.assignment6;
 
 public class TodoAppValidator {
 	
+	//method for validate the name
 	public String nameValidation(String name) {
 		String nameCondition = "^[a-zA-Z\\s]+";
 		
@@ -21,6 +22,7 @@ public class TodoAppValidator {
 		return null;
 	}
 	
+	//method for validate the username
 	public String userNameValidation(String username) {
 		if(username.isEmpty()) {
 			System.out.println("Please!, enter a valid username");
@@ -35,6 +37,7 @@ public class TodoAppValidator {
 		return null;
 	}
 	
+	//method for validate the password
 	public String passwordValidation(String password) {
 		
 		String pwdCondition = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}";

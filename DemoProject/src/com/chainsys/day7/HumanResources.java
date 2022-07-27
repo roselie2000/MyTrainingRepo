@@ -31,9 +31,7 @@ public class HumanResources extends Manager{
 	
 	public void display() {
 //		System.out.println(task);
-//		System.out.println(super.branch);
-		
-		super.displayTask();
+		System.out.println(super.task);
 		
 		
 	}

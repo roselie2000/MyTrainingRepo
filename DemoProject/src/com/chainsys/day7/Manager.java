@@ -112,10 +112,4 @@ public class Manager{
 		System.out.println("*******************************************************************");
 	}
 	
-	public void display() {
-		for (String values : task) {
-            System.out.println(values);
-        }
-	}
-	
 }

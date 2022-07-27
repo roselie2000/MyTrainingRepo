@@ -1,5 +1,7 @@
 package com.chainsys.day6.assignment6.test;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 import com.chainsys.day6.assignment6.TodoApp;
@@ -30,19 +32,17 @@ public class TodoTest {
 		tp.setPassword(validPwd);
 		System.out.println(tp.getPassword());
 		
-		System.out.println("Enter No of Tasks");
+		ArrayList<String> task = new ArrayList<String>();  
+		System.out.println("Enter No of Tasks :");
         int n = sn.nextInt();
-        String arr[] = new String[n];
         for(int j=0;j<n;j++)
         {
             System.out.println("Enter the Task");
-            arr[j]=sn.next();
+            task.add(sn.next());
         }
-        System.out.println("ToDo are :");
         
-        for (String values : arr) {
-            System.out.println(values);
-        }
+        System.out.println("The Tasks are :\n");
+        System.out.println(task);
 		
 	}
 }
