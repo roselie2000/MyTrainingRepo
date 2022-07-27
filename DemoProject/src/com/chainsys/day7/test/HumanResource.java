@@ -6,8 +6,11 @@ import com.chainsys.day7.Manager;
 
 public class HumanResource extends Manager{
 
+	//data members
 	String branch = "Madurai";
 	String task[];
+	
+	//override task method
 	@Override
 	public void task() {
 		

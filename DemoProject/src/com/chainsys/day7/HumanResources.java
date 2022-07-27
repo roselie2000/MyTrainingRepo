@@ -4,8 +4,11 @@ import java.util.Scanner;
 
 public class HumanResources extends Manager{
 
+	//data members
 	String task[];
 	String branch = "Madurai";
+	
+	//override the task method
 	@Override
 	public void task() {
 		Scanner sn = new Scanner(System.in);
@@ -19,6 +22,7 @@ public class HumanResources extends Manager{
         }
 	}
 	
+	//override the displayTask method
 	@Override
 	public void displayTask() {
 		System.out.println(branch);
@@ -29,6 +33,7 @@ public class HumanResources extends Manager{
 		System.out.println("*******************************************************************");		
 	}
 	
+	//method for display total task
 	public void display() {
 //		System.out.println(task);
 		System.out.println(super.task);

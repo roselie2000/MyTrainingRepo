@@ -4,36 +4,44 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Manager{
+	//data members
 	public String branch = "Ayanambakam";
 	public String task[];
 	private String name;
 	private String username;
 	private String password;
 	
+	//getter for name
 	public String getName() {
 		return name;
 	}
 	
+	//setter for name
 	public void setName(String name) {
 		this.name = name;
 	}
 	
+	//getter for username
 	public String getUserName() {
 		return username;
 	}
 	
+	//setter for username
 	public void setUserName(String username) {
 		this.username = username;
 	}
 	
+	//getter for password
 	public String getPassword(){
 		return password;
 	}
 	
+	//setter for password
 	public void setPassword(String password) {
 		this.password = password;
 	}
 	
+	//method for validate name
 	public String nameValidation(String name) {
 		String nameCondition = "^[a-zA-Z\\s]+";
 		
@@ -53,6 +61,7 @@ public class Manager{
 		return null;
 	}
 	
+	//method for validate username
 	public String userNameValidation(String username) {
 		if(username.isEmpty()) {
 			System.out.println("Please!, enter a valid username");
@@ -67,6 +76,7 @@ public class Manager{
 		return null;
 	}
 	
+	//method for validate password
 	public String passwordValidation(String password) {
 		
 		String pwdCondition = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}";
@@ -83,6 +93,7 @@ public class Manager{
 		return null;
 	}
 	
+	//method for add task
 	public void task() {
 		Scanner sn = new Scanner(System.in);
 		System.out.println("Enter No of Tasks");
