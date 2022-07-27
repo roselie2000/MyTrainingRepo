@@ -13,11 +13,11 @@ public class ArrayObjectClass {
 	  
 	    // display() method to display
 	    // the student data
-	    public void display()
+	    public void display(int n)
 	    {
 	        System.out.println("Student id is: " + id + " "
 	                           + "and Student name is: "
-	                           + name);
+	                           + name + n);
 	      
 	    }
 }

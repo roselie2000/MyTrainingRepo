@@ -18,8 +18,8 @@ public class ArrayObjectClassTest {
 	        // Displaying the student data
 	        System.out.println(
 	            "Student data in student arr 0: ");
-	        arr[0].display();
-	        arr[1].display();
+	        arr[0].display(10);
+	        arr[1].display(20);
 	  
 	}
 }
