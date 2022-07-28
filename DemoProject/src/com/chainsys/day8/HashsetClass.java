@@ -14,8 +14,8 @@ public class HashsetClass {
 		set.add(3);
 		System.out.println(set);
 		System.out.println(set.size());
-		System.out.println(set.toArray());
 		System.out.println(set.stream());
+		System.out.println(set.toArray());
 		set.clear();
 		System.out.println(set);
 	}
