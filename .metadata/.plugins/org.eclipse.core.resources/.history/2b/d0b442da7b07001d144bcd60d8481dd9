@@ -1,9 +1,0 @@
-package com.chainsys.assignment2;
-
-import java.util.Scanner;
-
-public class PlaceofService {
-	
-	Scanner sn = new Scanner(System.in);
-	
-}

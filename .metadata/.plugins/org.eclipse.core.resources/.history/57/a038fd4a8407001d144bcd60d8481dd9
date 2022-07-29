@@ -1,8 +1,0 @@
-package com.chainsys.assignment2.test;
-
-public class TacCalculatorTest {
-	public static void main(String args []) {
-	TtaxCalculation tc = new TaxCalculation();
-		
-	}
-}

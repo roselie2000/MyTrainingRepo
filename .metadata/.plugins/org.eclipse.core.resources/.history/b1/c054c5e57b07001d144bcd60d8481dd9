@@ -1,8 +1,0 @@
-package com.chainsys.assignment2;
-
-import java.util.Scanner;
-
-public class PlaceofService {
-	
-	System.out.println("Enter :");
-}

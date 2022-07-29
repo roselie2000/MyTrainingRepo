@@ -1,7 +1,0 @@
-package com.chainsys.assignment2.test;
-
-public class PlaceOfServiceTest {
-	public static void main(String args []) {
-		PlaceOfService pos = new PlaceOfService();
-	}
-}

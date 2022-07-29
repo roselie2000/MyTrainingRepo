@@ -1,27 +1,16 @@
-1658127766222	Delete element
-1658145517194	Move compilation unit
-1658145526114	Move compilation unit
-1658145545253	Move compilation unit
-1658145577120	Delete element
-1658148575457	Delete element
-1658148993086	Rename compilation unit 'SalaryHikeMgmt.java'
-1658223584623	Move compilation unit
-1658223592570	Move compilation unit
-1658223598085	Move compilation unit
-1658223606330	Move compilation unit
-1658223790237	Copy package
-1658223878090	Delete element
-1658223885170	Delete element
-1658224132706	Move compilation unit
-1658224137926	Move compilation unit
-1658224143043	Move compilation unit
-1658224154267	Delete element
-1658224159597	Delete element
-1658225108092	Delete element
-1658230259483	Rename package 'com.chainsys.assignment2.Test'
-1658230355265	Rename type 'MovieClass'
-1658230384219	Rename type 'MovieClass'
-1658230594250	Delete element
-1658246423582	Delete element
-1658246430412	Delete element
-1658250052709	Rename type 'TacCalculatorTest'
+1658381191217	Delete element
+1658381300249	Convert local variable 'number' to field
+1658406575538	Move package
+1658406580937	Move package
+1658406659077	Delete element
+1658406664877	Delete element
+1658406969868	Delete element
+1658406980654	Delete element
+1658406986280	Delete element
+1658417525384	Delete element
+1658418958595	Delete element
+1658418964164	Delete element
+1658418969189	Delete element
+1658471993399	Rename type 'FindEClass'
+1658483421505	Rename type 'SortingClass'
+1658487542729	Rename type 'ReverseStringclass'

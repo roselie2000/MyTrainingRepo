@@ -1,9 +1,0 @@
-package com.chainsys.main;
-
-public class MovieClass {
-	String movieName;
-	String releaseDate;
-	String heroName;
-	String directorName;
-	String producerName;
-}

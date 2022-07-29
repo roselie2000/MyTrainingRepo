@@ -1,7 +1,0 @@
-package com.chainsys.assignment2.test;
-
-public class MovieClass {
-	public static void main(String args []) {
-		
-	}
-}

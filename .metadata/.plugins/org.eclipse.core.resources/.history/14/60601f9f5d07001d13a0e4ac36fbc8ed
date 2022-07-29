@@ -1,7 +1,0 @@
-package com.chainsys.assignment2;
-
-public class ArithmeticOperation {
-	public void equal(int x) {
-		System.out.println(x==2);
-	}
-}

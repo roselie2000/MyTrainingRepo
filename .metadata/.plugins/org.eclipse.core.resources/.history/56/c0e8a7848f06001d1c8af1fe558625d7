@@ -1,9 +1,0 @@
-package com.chainsys.main;
-
-public class MovieClass {
-	String movieName = "Master";
-	String releaseDate = "22july2020";
-	String heroName = "Vijay";
-	String directorName = "Lokesh Kanagaraj";
-	String producerName = "Sun Pictures";
-}

@@ -1,9 +1,0 @@
-package com.chainsys.main;
-
-public class MovieClass {
-	String movieName = "Bigil";
-	String heroName = "Vijay";
-	String herionName = "Nayanthara";
-	String directorName = "Atlee";
-	String producerName = "Sun Pictures";
-}

@@ -1,9 +1,0 @@
-package com.chainsys.assignment1;
-
-public class HospitalClass {
-	String hospitalName;
-	String address;
-	String hospitalFounder;
-	String hospitalChairman;
-	String chiefDoctor;
-}
