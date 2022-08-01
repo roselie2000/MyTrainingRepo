@@ -1,4 +1,4 @@
-package TestAssgnPackage;
+package TestAssgnPackage.exceptiondemo;
 
 //User Defined Exception class
 public class UserDefExptn extends Exception {

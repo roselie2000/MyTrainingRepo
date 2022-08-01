@@ -1,4 +1,4 @@
-package TestAssgnPackage;
+package TestAssgnPackage.exceptiondemo;
 
 public class Studentsdb {
 

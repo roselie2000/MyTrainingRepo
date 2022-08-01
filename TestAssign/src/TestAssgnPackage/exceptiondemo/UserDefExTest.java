@@ -1,6 +1,4 @@
-package TestAssgnPackage.test;
-
-import TestAssgnPackage.UserDefExptn;
+package TestAssgnPackage.exceptiondemo;
 
 public class UserDefExTest {
 

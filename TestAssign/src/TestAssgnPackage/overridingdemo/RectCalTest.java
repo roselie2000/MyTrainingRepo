@@ -1,7 +1,4 @@
-package TestAssgnPackage.test;
-
-import TestAssgnPackage.AreaCalculation;
-import TestAssgnPackage.AreasufCal;
+package TestAssgnPackage.overridingdemo;
 
 public class RectCalTest {
 

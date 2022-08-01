@@ -1,4 +1,4 @@
-package TestAssgnPackage.test;
+package TestAssgnPackage.exceptiondemo;
 
 public class StudentTest {
 

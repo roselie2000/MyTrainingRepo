@@ -1,6 +1,4 @@
-package TestAssgnPackage.test;
-
-import TestAssgnPackage.Studentsdb;
+package TestAssgnPackage.exceptiondemo;
 
 public class StudentsTest {
 

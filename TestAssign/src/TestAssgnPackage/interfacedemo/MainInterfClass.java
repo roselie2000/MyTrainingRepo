@@ -1,6 +1,4 @@
-package TestAssgnPackage.test;
-
-import TestAssgnPackage.interfacedemo.MultiInterface;
+package TestAssgnPackage.interfacedemo;
 
 public class MainInterfClass {
 		public static void main(String args[]) {

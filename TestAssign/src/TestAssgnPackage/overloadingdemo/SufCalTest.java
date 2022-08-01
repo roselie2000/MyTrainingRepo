@@ -1,6 +1,4 @@
-package TestAssgnPackage.test;
-
-import TestAssgnPackage.SquareSuf;
+package TestAssgnPackage.overloadingdemo;
 
 public class SufCalTest {
 
