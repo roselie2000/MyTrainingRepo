@@ -1,0 +1,17 @@
+List of Primitive Data types
+
+ Data types		Default Value
++ Integer   -     0
++ Float     -	  0.0
++ Double    -     0.0
++ Character -     null
++ Short     -     0
++ Long      -     0
++ Byte      -     0
++ Boolean   -     False
+
+Interface :
+
+Interface is a class which has only the declarations. It should not have any implementations in it.
+If one class implements the interface then the class wants to implement all the methods of the interface.
+It is used for multiple inheritence in java.

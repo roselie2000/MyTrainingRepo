@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.chainsys.day4.AcendSequenceClass"/>
-    <fullyQualifiedTypeName name="com.chainsys.day4.FacinateNumber"/>
-    <fullyQualifiedTypeName name="com.chainsys.day5.FindClass"/>
-    <fullyQualifiedTypeName name="com.chainsys.day5.FindCharacterClass"/>
-    <fullyQualifiedTypeName name="com.chainsys.day5.NoOfOccurrence"/>
-    <fullyQualifiedTypeName name="com.chainsys.day5.SortingClass"/>
-    <fullyQualifiedTypeName name="com.chainsys.day5.AnagramClass"/>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
-    <fullyQualifiedTypeName name="com.chainsys.day5.PalindromeClass"/>
-    <fullyQualifiedTypeName name="com.chainsys.day5.ReverseStringClass"/>
-    <fullyQualifiedTypeName name="com.chainsys.day5.ReplaceWordClass"/>
     <fullyQualifiedTypeName name="com.chainsys.day1.FirstClass"/>
     <fullyQualifiedTypeName name="com.chainsys.day1.assignment1.HospitalClass"/>
     <fullyQualifiedTypeName name="com.chainsys.day1.assignment1.MovieClass"/>
@@ -53,11 +42,22 @@
     <fullyQualifiedTypeName name="com.chainsys.day8.JdbcApp"/>
     <fullyQualifiedTypeName name="java.sql.DriverManager"/>
     <fullyQualifiedTypeName name="sample.EmployeeDao"/>
-    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="sample.TableClass"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
-    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="sample.ConnectionUtil"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="TestAssgnPackage.interface2"/>
+    <fullyQualifiedTypeName name="TestAssgnPackage.AreaCalculation"/>
+    <fullyQualifiedTypeName name="TestAssgnPackage.RectangleSuface"/>
+    <fullyQualifiedTypeName name="TestAssgnPackage.SquareSuf"/>
+    <fullyQualifiedTypeName name="TestAssgnPackage.Student"/>
+    <fullyQualifiedTypeName name="TestAssgnPackage.Studentsdb"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="TestAssgnPackage.test.UserDefExTest"/>
+    <fullyQualifiedTypeName name="TestAssgnPackage.UserDefExptn"/>
 </qualifiedTypeNameHistroy>

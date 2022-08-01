@@ -7,7 +7,7 @@ public class PlaceOfService {
 
 	// Get all Information from the user
 	public void getInfo() {
-		System.out.println("Enter your Age :");// Getting Age
+		System.out.println("Enter your Age :");// Getting Age from the user
 		int age = sn.nextInt();
 		if (age > 0) {
 			System.out.println("Enter your sex :");

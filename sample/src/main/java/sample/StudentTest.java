@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class StudentTest {
 
 	public static void main(String[] args) {
-		TableClass tc = new TableClass();
+		Studentsdb tc = new Studentsdb();
 		Scanner sn = new Scanner(System.in);
 		
 		System.out.println("Enter an option:");

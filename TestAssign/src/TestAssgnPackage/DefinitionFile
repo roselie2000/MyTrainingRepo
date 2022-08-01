@@ -1,0 +1,108 @@
+1)
+List of Primitive Data types
+
+ Data types		Default Value
++ int   	-     0
++ float     -	  0.0
++ double    -     0.0
++ char 		-     null
++ short     -     0
++ long      -     0
++ byte      -     0
++ boolean   -     False
+
+2)
+Interface :
+
+Interface is a class which has only the declarations. It should not have any implementations in it.
+If one class implements the interface then the class wants to implement all the methods of the interface.
+It is used for multiple inheritence in java. Ex: MultiInterfClass
+
+3)
+Abstract vs Interface
+
+Interface has no implementation code in it. But the abstract Class may have some implemented methods.
+Interface is declared with interface keyword and the Abstract is declared with abstract keyword.
+We use implements keyword for implement the interface in a class.
+We want to use extends keyword for inherit a abstract class in a class.
+If we implements a interface we want to implement all methods of the interface.
+If we inherit a abstract class no need to implement all methods of the abstract.
+If we want to do some implementations also then we go for abstract otherwise we use interface.
+
+4)
+Two types of polymorphism
++ Overridding Ex:rectCalTest class
++ Overloading Ex:SufTest class
+
+5)
+OOPs - Object Oriented Programming
+Features :
++ In Object oriented programming the object is important
++ More security than procedural level programming.
+
+6)
+Object:
+object is a instance of a class. It is loaded on heap memory.
+
+7)
+Inheritence:
+A class takes all the property of the another class is called inheritence. The inherited class is known as 
+super class or parent class. The inheriting class is called child class or sub class.
+Types:
++ Single Inheritence
++ Multi Level Inheritence
++ Hirarchial Inheritence
+
+8)
+Constructor
+It is initialise the state of the object.It has the syntax like the method. But it is called when a class is created.
+The Constructor are in two types 
+1) Default Constructor			2) Parameterized Constructor
+
+9)
+Steps to connect JDBC
+
+1) Import the required libraries
+2) JDBC Registeration (class.forname())
+3) Get Connection (DriverManager.getConnection())
+4) Create statement object.
+5) Execute the query.
+6) Close the connection.
+
+10)
+Maven is software for creating jdbc projects.
+
+11)
+Checked Exception: It is occur in compile time. Ex: StudentTest class
+Unchecked Exception: It is occur in runtime time. Ex: StudentsTest class.
+Custom Exception: It is defined by the developer. Ex: UserDefTest class.
+
+12)
+this keyword:
+If a global variable and the local variable has same name then this keyword is used for mention the global variable.
+Syntax: this.var_name
+
+super keyword:
+super keyword is used for call the method of super class.
+Syntax: super.super_cls_method_name.
+
+13)
+Package: small case letters.
+Class: Upper Camel case.
+Interface: Upper Camel case.
+Variable: Lower Camel case.
+Methods: Lower Camel case.
+
+14)
+List vs Set vs Map
+List and set are index based. But Map is key based.
+Set and Map have only unique values. List has repeated values.
+Map is sort the key automatically. but set and list have predefined index starts from 0.
+
+15)
+Generics
+It is used to stored only a single type of objects.
+If we create an array with Integer type then the array only store integer values
+It check it at compile time.
+Syntax:
+ArrayList<data type> name = new ArrayList<data type>;
