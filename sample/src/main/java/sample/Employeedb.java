@@ -1,9 +1,11 @@
 package sample;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 public class Employeedb {
 
@@ -17,14 +19,16 @@ public class Employeedb {
 		try {
 			con = ConnectionUtil.getConnection();
 			//insert query
-			String query = "insert into Employee(id, name, designation, salary)values(?, ?, ?, ?)";
+			String query = "insert into Employee(id, name, designation, salary, joiningDate, age)values(?, ?, ?, ?, ?, ?)";
 			PreparedStatement ps = con.prepareStatement(query);//creating statement object
 			
 			ps.setInt(1, emp.getId());//set id value
 			ps.setString(2, emp.getName());//set name value
 			ps.setString(3, emp.getDesignation());//set designation value
 			ps.setLong(4, emp.getSalary());//set salary value
-			int i = ps.executeUpdate();//execute the query
+			ps.setDate(5, emp.getJoinDate());
+			ps.setInt(6, emp.getAge());
+			ps.executeUpdate();//execute the query
 		}
 		 catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
@@ -71,7 +75,9 @@ public class Employeedb {
 				String name = rs.getString("name");
 				String designation = rs.getString("designation");
 				long salary = rs.getLong("salary");
-				System.out.println(id + " " + name + " " + designation + " " + salary);
+				Date date = rs.getDate("joiningDate");
+				int age = rs.getInt("age");
+				System.out.println(id + " " + name + " " + designation + " " + salary + " " + date + " " + age);
 			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -91,11 +97,10 @@ public class Employeedb {
 			ps1.setInt(1, empid);
 			ps1.executeUpdate();
 		}catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
+	
 }

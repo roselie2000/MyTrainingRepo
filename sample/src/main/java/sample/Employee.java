@@ -1,5 +1,7 @@
 package sample;
 
+import java.sql.Date;
+
 public class Employee {
 
 	//Data members
@@ -7,6 +9,8 @@ public class Employee {
 	private String name;
 	private String designation;
 	private Long basicSalary;
+	private Date joinDate;
+	private int age;
 
 	//empty constructor
 	public Employee() {
@@ -60,6 +64,24 @@ public class Employee {
 	//setter for salary
 	public void setSalary(long basicSalary) {
 		this.basicSalary = basicSalary;
+	}
+	
+	public void setJoiningDate(Date joinDate) {
+		this.joinDate = joinDate;
+	}
+	
+	public Date getJoinDate() {
+		return joinDate;
+	}
+	
+	//setter for date
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	//getter for date
+	public int getAge() {
+		return age;
 	}
 
 	@Override
