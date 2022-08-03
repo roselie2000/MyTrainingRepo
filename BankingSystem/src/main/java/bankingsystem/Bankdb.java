@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import sample.ConnectionUtil;
-
 public class Bankdb implements BankDoa{
 
 	public void insertBranchDetails(Bank bk) {

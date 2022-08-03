@@ -7,8 +7,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import sample.ConnectionUtil;
-
 public class Customrdb implements CustomerDoa{
 
 	//method for insert the data of customer
