@@ -20,12 +20,10 @@ public class Customrdb implements CustomerDoa{
 			if(rs.next()) {
 				id = rs.getInt(1);
 				cust.setCustId(id);
-				System.out.println("Added");
 			}
 			//insert query
 			String insertQuery = "insert into customers(cust_id, cust_name, dob, address, phone_no, branch_id)values(?, ?, ?, ?, ?, ?)";
 			PreparedStatement ps1 = con.prepareStatement(insertQuery);
-			System.out.println("Query created");
 			//get the data by getter method and set it to  the query statement
 			ps1.setInt(1, cust.getCustId());
 			ps1.setString(2, cust.getCustName());
@@ -33,10 +31,8 @@ public class Customrdb implements CustomerDoa{
 			ps1.setString(4, cust.getAddress());
 			ps1.setLong(5, cust.getPhoneno());
 			ps1.setString(6, cust.getBranchId());
-			System.out.println("Query created");
 			ps1.executeUpdate();
-			System.out.println("Query created");
-			System.out.println("The new branch details are added to the db!");
+			System.out.println("The new customer details are added to the db!");
 		}
 		catch (Exception e) {
 			e.printStackTrace();

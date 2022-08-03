@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import bankingsystem.Bank;
 import bankingsystem.Bankdb;
+import bankingsystem.Validation;
 
 public class BankTest {
 
@@ -12,6 +13,7 @@ public class BankTest {
 		Bank bk = new Bank();//object creation for Bank
 		Bankdb bkd = new Bankdb();//object creation for Bankdb
 		Scanner sn = new Scanner(System.in);
+		Validation vd = new Validation();
 
 		System.out.println("Enter 'i' for insert");
 		System.out.println("Enter 'd' for display the records");
@@ -21,17 +23,19 @@ public class BankTest {
 		if(msg.equals("i")) {
 			System.out.println("Enter the branch id :");
 			String branchId = sn.next();
-			bk.setBranchId(branchId);
-			
-			System.out.println("Enter the branch name :");
-			String branchName = sn.next();
-			bk.setBranchName(branchName);
-			
-			System.out.println("Enter the Address of the branch :");
-			String address = sn.next();
-			bk.setAddress(address);
-	
-			bkd.insertBranchDetails(bk);
+			if(vd.checkBankId(branchId)) {
+				bk.setBranchId(branchId);
+				
+				System.out.println("Enter the branch name :");
+				String branchName = sn.next();
+				bk.setBranchName(branchName);
+				
+				System.out.println("Enter the Address of the branch :");
+				String address = sn.next();
+				bk.setAddress(address);
+		
+				bkd.insertBranchDetails(bk);
+			}
 		}
 		else if(msg.equals("d")){
 			ArrayList<Bank> data = new ArrayList<Bank>();
