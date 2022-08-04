@@ -1,5 +1,10 @@
 package bankingsystem;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.InputStream;
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -31,6 +36,42 @@ public class Customrdb implements CustomerDoa{
 			ps1.setString(4, cust.getAddress());
 			ps1.setLong(5, cust.getPhoneno());
 			ps1.setString(6, cust.getBranchId());
+			ps1.executeUpdate();
+			System.out.println("The new customer details are added to the db!");
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void insertCustDetailsFiles(Customer cust) {
+		try {
+			int id = 0;
+			Connection con = ConnectionUtil.getConnection();
+			String query1 = "select custid.nextval from dual";//query string get the next value of the sequence
+			PreparedStatement ps = con.prepareStatement(query1);//create statement object
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()) {
+				id = rs.getInt(1);
+				cust.setCustId(id);
+			}
+			//insert query
+			String insertQuery = "insert into customers(cust_id, cust_name, dob, address, phone_no, branch_id, files, images)values(?, ?, ?, ?, ?, ?, ?, ?)";
+			File f = new File("C:\\Users\\rose3001\\eclipse-workspace\\File Management\\textfile.txt");
+			FileReader fr = new FileReader(f);
+			InputStream in = new FileInputStream("C:\\Users\\rose3001\\eclipse-workspace\\File Management\\textfile.txt");
+//			File img = new File("C:\\Users\\rose3001\\eclipse-workspace\\BankingSystem\\nature.jpg");
+//			FileReader imgr = new FileReader(img);
+			PreparedStatement ps1 = con.prepareStatement(insertQuery);
+			//get the data by getter method and set it to  the query statement
+			ps1.setInt(1, cust.getCustId());
+			ps1.setString(2, cust.getCustName());
+			ps1.setDate(3, cust.getDob());
+			ps1.setString(4, cust.getAddress());
+			ps1.setLong(5, cust.getPhoneno());
+			ps1.setString(6, cust.getBranchId());
+			ps1.setClob(7, fr);
+			ps1.setBlob(8, in);
 			ps1.executeUpdate();
 			System.out.println("The new customer details are added to the db!");
 		}

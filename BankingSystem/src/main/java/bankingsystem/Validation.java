@@ -1,7 +1,6 @@
 package bankingsystem;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.time.LocalDate;
@@ -11,13 +10,13 @@ public class Validation {
 
 	public Boolean checkId(int id) {
 		try {
-			ArrayList<String> CustId = new ArrayList<String>();
+			ArrayList<Integer> CustId = new ArrayList<Integer>();
 			Connection con = ConnectionUtil.getConnection();
 			String q = "select cust_id from customers";
 			PreparedStatement ps = con.prepareStatement(q);
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
-				CustId.add(rs.getString(1));
+				CustId.add(rs.getInt(1));
 			}
 			if(CustId.contains(id)) {
 				return true;

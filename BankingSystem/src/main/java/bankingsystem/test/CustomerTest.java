@@ -46,7 +46,7 @@ public class CustomerTest {
 							System.out.println("Enter the address of the customer :");
 							String address = sn.next();
 							cust.setAddress(address);//set address
-							custd.insertCustDetails(cust);
+							custd.insertCustDetailsFiles(cust);
 						}
 					}
 				}
