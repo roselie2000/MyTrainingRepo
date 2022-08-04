@@ -30,10 +30,8 @@ public class SpecialNumber {
 		int t = sn.nextInt();
 		for(int i=0; i<t; i++) {
 			String msg = "false";
-			System.out.println("for loop");
 			System.out.println("Enter a :");
 			int a = sn.nextInt();
-			System.out.println("getting");
 			if(sp.sumOfDigit(a)) {
 				System.out.println("if");
 				s = a;
@@ -41,7 +39,6 @@ public class SpecialNumber {
 			else {
 				a += 1;
 				while(msg.equals("false")) {
-					System.out.println("While loop");
 					if(sp.sumOfDigit(a)) {
 						s = a;
 						msg = "true";
