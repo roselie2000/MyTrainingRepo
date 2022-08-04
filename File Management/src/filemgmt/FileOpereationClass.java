@@ -35,8 +35,17 @@ public class FileOpereationClass {
 			File myfile = new File("textfile.txt");//create a file object
 			if(!checkExist(myfile)) {
 				myfile.createNewFile();//create a new file
-				System.out.println("File created");
 			}	
+			else {
+				System.out.println("File created");
+				System.out.println("The file can be read :" + myfile.canRead());
+				System.out.println("The file can be write :" + myfile.canWrite());
+				System.out.println("The name of the file :" + myfile.getName());
+				System.out.println("Parent of the file :"+ myfile.getParent());
+				System.out.println("Total space allocated to file is "+ myfile.getTotalSpace());
+				System.out.println("Last modified time in miliseconds :" + myfile.lastModified());
+				System.out.println("Total length of the file :"+ myfile.length());
+			}
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -58,6 +67,7 @@ public class FileOpereationClass {
 				System.out.println("Buffer Writting!");
 				wt.newLine();//it go to the next line of the file.
 				wt.write("Buffer writer");//write the file using BufferWriter
+				System.out.println("Writing Completed!");
 				wt.close();//close the file writer
 				writer.close();//close the buffer writer
 			}
