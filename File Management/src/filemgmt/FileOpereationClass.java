@@ -5,6 +5,10 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileOpereationClass {
@@ -32,7 +36,7 @@ public class FileOpereationClass {
 	//method for create a file
 	public void createFile() {
 		try {
-			File myfile = new File("textfile.txt");//create a file object
+			File myfile = new File("textfile.doc");//create a file object
 			if(!checkExist(myfile)) {
 				myfile.createNewFile();//create a new file
 			}	
@@ -62,14 +66,7 @@ public class FileOpereationClass {
 				System.out.println("File writing!");
 				writer.write("This is my new file. which is created through java.");//write the content
 				System.out.println("Writing completed!");
-				
-				BufferedWriter wt = new BufferedWriter(writer);//create a BufferWriter object
-				System.out.println("Buffer Writting!");
-				wt.newLine();//it go to the next line of the file.
-				wt.write("Buffer writer");//write the file using BufferWriter
-				System.out.println("Writing Completed!");
-				wt.close();//close the file writer
-				writer.close();//close the buffer writer
+				writer.close();//close the file writer
 			}
 			catch (Exception e) {
 				e.printStackTrace();
@@ -85,6 +82,54 @@ public class FileOpereationClass {
 				e.printStackTrace();
 			}
 		}
+	}
+	
+	public void appendFile() {
+		try {
+			File f = new File("textfile.txt");//create a file object
+			FileWriter writer = new FileWriter(f, true);//create a writer object
+			BufferedWriter wt = new BufferedWriter(writer);//create a BufferWriter object
+			System.out.println("Buffer Writting!");
+			wt.newLine();//it go to the next line of the file.
+			wt.write("Buffer writer");//write the file using BufferWriter
+			System.out.println("Writing Completed!");
+			wt.close();//close the file writer
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+	
+	public void modifyFile() {
+		ArrayList<String> lines = new ArrayList<String>();
+        String line = null;
+         try
+            {
+                File f1 = new File("textfile.txt");
+                FileReader fr = new FileReader(f1);
+                BufferedReader br1 = new BufferedReader(fr);
+                while ((line = br1.readLine()) != null)
+                {
+                    if (line.contains("Buffer"))
+                        line = line.replace("Buffer", "File");
+                    lines.add(line);
+                }
+                fr.close();
+                br1.close();
+                
+                FileWriter fw1 = new FileWriter(f1);
+                BufferedWriter out = new BufferedWriter(fw1);
+                for(String s : lines)
+                     out.write(s);
+                out.flush();
+                out.close();
+               
+                System.out.println("Successfully modified");
+            }
+            catch (Exception ex)
+            {
+                ex.printStackTrace();
+            }
 	}
 	
 	//method for read a file
@@ -144,6 +189,61 @@ public class FileOpereationClass {
 		}
 		catch (Exception e) {
 			e.printStackTrace();
+		}
+	}
+	
+	public void RenameFile() {
+		try {
+			File f = new File("textfile.doc");
+			File rn = new File("textfile.txt");
+			if(checkExist(f)) {
+				boolean flag = f.renameTo(rn);
+				if(flag) {
+					System.out.println("The file is renamed!");
+				}
+				else {
+					System.out.println("The file is can't renamed!");
+				}
+			}
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+	
+	public void copyFile() {
+		try {
+			File f = new File("textfile.txt");
+			FileReader fr = new FileReader("textfile.txt");
+			FileWriter rn = new FileWriter("textfile.doc");
+			if(checkExist(f)) {
+				int c;
+				while ((c = fr.read()) != -1) { 
+					System.out.println(c);
+					   rn.write(c);  
+					  } 
+			}
+			fr.close();
+			rn.close();
+			System.out.println("Copied!");
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+	
+	public void moveFile() {
+		try {
+			Path temp = Files.move(Paths.get("C:\\Users\\rose3001\\eclipse-workspace\\File Management\\textfile.doc"),Paths.get("C:\\Users\\rose3001\\eclipse-workspace\\textfile.doc"));
+			if(temp != null) {
+				System.out.println("Moved!");
+			}
+			else {
+				System.out.println("The file is can't moved!");
+			}
+		}
+		catch (Exception e) {
+			System.out.println(e);
 		}
 	}
 }

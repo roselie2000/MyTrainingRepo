@@ -1,2 +1,1 @@
-This is my new file. which is created through java.
-Buffer writer
+This is my new file. which is created through java.File writerFile writer
