@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class DividedClass {
 
 	public static void main(String args[]) {
-		
+		//solved
 		Scanner sn = new Scanner(System.in);
 		String ans;
         StringBuilder number = new StringBuilder();

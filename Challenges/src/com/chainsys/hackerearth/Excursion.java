@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Excursion {
 
 	public static void main(String[] args) {
+		//solved
 		Scanner sn = new Scanner(System.in);
 		int rooms;
 		System.out.println("Enter t :");

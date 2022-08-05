@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class ZooPblm {
 
 	public static void main(String args[]) {
+		//solved
 		Scanner sn = new Scanner(System.in);
 		System.out.println("Enter a String :");
 		int x = 0;

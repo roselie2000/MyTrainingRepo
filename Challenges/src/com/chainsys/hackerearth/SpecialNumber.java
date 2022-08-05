@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class SpecialNumber {
 
+	//partially solved
 	public Boolean sumOfDigit(int a) {
 		int digit, sum = 0;
 		while(a > 0)  
