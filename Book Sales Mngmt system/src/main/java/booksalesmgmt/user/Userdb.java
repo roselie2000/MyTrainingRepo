@@ -13,16 +13,19 @@ import booksalesmgmt.book.Books;
 
 public class Userdb implements UserDoa {
 	
+	//method for insert the orders
 	public int insertOrder(String bookId, User us, int qty, String status) {
 		int id = 0;
 		try {
 			Connection con = ConnectionUtil.getConnection();
+			//query for get the order id value for the sequence
 			String query = "select order_id.nextval from dual";
 			PreparedStatement ps1 = con.prepareStatement(query);
 			ResultSet rs = ps1.executeQuery();
 			if (rs.next()) {
 				id = rs.getInt(1);
 			}
+			//query for insert the order details to the database
 			String q = "insert into users_ordered(user_id, book_id, quantity, status, order_id) values (?, ?, ?, ?, ?)";
 			PreparedStatement ps = con.prepareStatement(q);
 			ps.setInt(1, us.getUserId());
@@ -37,9 +40,11 @@ public class Userdb implements UserDoa {
 		return id;
 	}
 	
+	//method for update the order status
 	public void updateOrder(int orderId, String status) {
 		try {
 			Connection con = ConnectionUtil.getConnection();
+			//query for update the status of the order
 			String q = "update users_ordered set status = ? where order_id = ?";
 			PreparedStatement ps = con.prepareStatement(q);
 			ps.setString(1, status);
@@ -51,10 +56,12 @@ public class Userdb implements UserDoa {
 		}
 	}
 
+	//method for add the user details to the database
 	public void signUp(User us) {
 		int id = 0;
 		try {
 			Connection con = ConnectionUtil.getConnection();
+			//query for get the user id from the sequence
 			String query = "select user_id.nextval from dual";
 			PreparedStatement ps = con.prepareStatement(query);
 			ResultSet rs = ps.executeQuery();
@@ -62,6 +69,7 @@ public class Userdb implements UserDoa {
 				id = rs.getInt(1);
 				us.setUserId(id);
 			}
+			//query for insert the user details to the database
 			String query1 = "insert into users(user_id, user_name, password, email, door_no, city, district,"
 					+ "state, name) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement ps1 = con.prepareStatement(query1);
@@ -82,9 +90,11 @@ public class Userdb implements UserDoa {
 		}
 	}
 
+	//method for delete a user details from the database
 	public void logout(int userId) {
 		try {
 			Connection con = ConnectionUtil.getConnection();
+			//query for delete the user details where the specified user id
 			String q = "delete from users where user_id = ?";
 			PreparedStatement ps = con.prepareStatement(q);
 			ps.setInt(1, userId);
@@ -94,14 +104,18 @@ public class Userdb implements UserDoa {
 			e.printStackTrace();
 		}
 	}
+	
+	//method for login the user to the system
 	public void login(String name, String pwd) {
 		String passwd = "";
 		try {
 			Connection con = ConnectionUtil.getConnection();
+			//query for get the user id, password, book received, book canceled from where the specified user name is present
 			String q = "select user_id, password, book_rev, book_can from users where user_name = ?";
 			PreparedStatement ps = con.prepareStatement(q);
 			ps.setString(1, name);
 			ResultSet rs = ps.executeQuery();
+			//check whether the password and user name is same or not
 			if (rs.next()) {
 				passwd = rs.getString(2);
 				if (passwd.equals(pwd)) {
@@ -120,11 +134,11 @@ public class Userdb implements UserDoa {
 					System.out.println("Enter 'q' for quite");
 					String msg = sn.next();
 					if (msg.equals("s")) {
-						search(us);
+						search(us);//call the search method
 					} else if (msg.equals("o")) {
-						order(us);
+						order(us);//call the order method
 					} else if (msg.equals("c")) {
-						cancel(us);
+						cancel(us);//call the cancel method
 					} else if (msg.equals("q")) {
 						System.out.println("Thank you for visiting!");
 					} else {
@@ -141,12 +155,14 @@ public class Userdb implements UserDoa {
 		}
 	}
 
+	//method for get the order from the user
 	public void order(User us) {
 		Scanner sn = new Scanner(System.in);
 		System.out.println("Enter the book ID :");
 		String bookId = sn.next();
 		try {
 			Connection con = ConnectionUtil.getConnection();
+			//query for get the price, quantity from books table where the specified book id is present 
 			String q = "Select price, quantity from books where book_id = ?";
 			PreparedStatement ps = con.prepareStatement(q);
 			ps.setString(1, bookId);
@@ -161,27 +177,29 @@ public class Userdb implements UserDoa {
 				if (msg.equals("y") || msg.equals("yes")) {
 					System.out.println("how many books you want? ");
 					int qty = sn.nextInt();
+					//check whether the quantity is greater than available
 					if(quantity < qty) {
 						System.out.println("Sorry! we have only " + quantity + "books");
 						System.out.println("if you don't mind please wait for two days");
 						System.out.println("Are you want to buy it!");
 						msg = sn.next();
 						if(msg.equals("y")) {
+							//query for update the number of books received in the user details
 							String upQuery = "update users set book_rev = ? where user_id = ?";
 							PreparedStatement ps1 = con.prepareStatement(upQuery);
-							int quant = qty + us.getBookRev();
+							int quant = qty + us.getBookRev();//add the ordered quantity and available received quantity
 							ps1.setInt(1, quant);
 							ps1.setInt(2, us.getUserId());
 							ps1.executeUpdate();
 							us.setBookRev(quant);
 							String status = "Ordered";
-							int orderId = insertOrder(bookId, us, qty, status);
+							int orderId = insertOrder(bookId, us, qty, status);//call the insert order method
 							System.out.println("Your order is placed.");
 							System.out.println("book :" + bookId + "  " + "Quantity :" + qty + "  " + 
 							"Price :" + qty * price);
 							System.out.println("Your order id is " + orderId);
 							Bookdb bdb = new Bookdb();
-							bdb.minusQuantity(bookId, qty);
+							bdb.minusQuantity(bookId, qty);//call the minus quantity method
 							System.out.println("Thank you");
 						}
 					}
@@ -215,6 +233,7 @@ public class Userdb implements UserDoa {
 		}
 	}
 
+	//method for search the books
 	public void search(User us) {
 		Scanner sn = new Scanner(System.in);
 		System.out.println("How do to want to search the book");
@@ -240,38 +259,54 @@ public class Userdb implements UserDoa {
 				q = "select * from books where publisher = ?";
 			}
 			try {
+				System.out.println("Search");
 				Connection con = ConnectionUtil.getConnection();
 				ArrayList<Books> data = new ArrayList<Books>();
 				PreparedStatement ps = con.prepareStatement(q);
 				ps.setString(1, val);
 				ResultSet rs = ps.executeQuery();
-				while(rs.next()) {
-					String id = rs.getString(1);//get id from the database
-					String name = rs.getString(2);//get name from the database
-					String author = rs.getString(3);//get email from the database
-					int version = rs.getInt(4);
-					String pub = rs.getString(5);
-					String sub = rs.getString(6);
-					int price = rs.getInt(7);
-					int qty = rs.getInt(8);
-					Books bk = new Books();//object creation for Students class
-					bk.setBookId(id);
-					bk.setBookName(name);
-					bk.setAuthorName(author);
-					bk.setVersion(version);
-					bk.setPublisher(pub);
-					bk.setSubject(sub);
-					bk.setPrice(price);
-					bk.setQuantity(qty);
-					data.add(bk);
+				System.out.println("Search");
+				if(rs.getFetchSize() > 0) {
+					while(rs.next()) {
+						String id = rs.getString(1);
+						String name = rs.getString(2);
+						String author = rs.getString(3);
+						int version = rs.getInt(4);
+						String pub = rs.getString(5);
+						String sub = rs.getString(6);
+						int price = rs.getInt(7);
+						int qty = rs.getInt(8);
+						Books bk = new Books();//object creation for Books class
+						bk.setBookId(id);
+						bk.setBookName(name);
+						bk.setAuthorName(author);
+						bk.setVersion(version);
+						bk.setPublisher(pub);
+						bk.setSubject(sub);
+						bk.setPrice(price);
+						bk.setQuantity(qty);
+						data.add(bk);
+					}
+					//display the book list
+					for(int i=0; i<data.size(); i++) {
+						System.out.println(data.get(i).getBookId() + "  " + data.get(i).getBookName() 
+								+ "  " + data.get(i).getAuthorName() + "  " + data.get(i).getVersion() + "  " +
+								data.get(i).getPublisher() + "  " + data.get(i).getSubject() + "  " + 
+								data.get(i).getPrice() + "  " + data.get(i).getQuantity());
+					}
+					System.out.println("Are you want to by it!");
+					String msg = sn.next();
+					if(msg.equals("y")) {
+						order(us);
+					}
+					else {
+						System.out.println("Thank you for visiting!");
+					}
+					
 				}
-				for(int i=0; i<data.size(); i++) {
-					System.out.println(data.get(i).getBookId() + "  " + data.get(i).getBookName() 
-							+ "  " + data.get(i).getAuthorName() + "  " + data.get(i).getVersion() + "  " +
-							data.get(i).getPublisher() + "  " + data.get(i).getSubject() + "  " + 
-							data.get(i).getPrice() + "  " + data.get(i).getQuantity());
+				else {
+					System.out.println("Please enter a valid value");
 				}
-				order(us);
 			}
 			catch (Exception e) {
 				e.printStackTrace();
@@ -282,6 +317,7 @@ public class Userdb implements UserDoa {
 		}
 	}
 
+	//method for cancel the order
 	public void cancel(User us) {
 		Scanner sn = new Scanner(System.in);
 		Validator vd = new Validator();
@@ -290,6 +326,7 @@ public class Userdb implements UserDoa {
 		if(vd.checkOrderId(id)) {
 			try {
 				Connection con = ConnectionUtil.getConnection();
+				//query for get the order details from the users_ordered table where the specified order id is present
 				String query = "select * from users_ordered where order_id = ?";
 				PreparedStatement ps = con.prepareStatement(query);
 				ps.setInt(1, id);
@@ -301,6 +338,7 @@ public class Userdb implements UserDoa {
 					String status = rs.getString(5);
 					int quant = us.getBookCan();
 					quant += qty;
+					//update the quantity of canceled book where the specified user id is present
 					String q = "update users set book_can = ? where user_id = ?";
 					PreparedStatement ps1 = con.prepareStatement(q);
 					ps1.setInt(1, quant);
@@ -309,15 +347,16 @@ public class Userdb implements UserDoa {
 					
 					quant = us.getBookRev();
 					quant -= qty;
+					//update the quantity of received book where the specified user id is present
 					String q1 = "update users set book_rev = ? where user_id = ?";
-					PreparedStatement ps2 = con.prepareStatement(q);
+					PreparedStatement ps2 = con.prepareStatement(q1);
 					ps2.setInt(1, quant);
 					ps2.setInt(2, userId);
 					ps2.executeUpdate();
 					status = "Cancelled";
-					updateOrder(id, status);
+					updateOrder(id, status);//call the update order method for update the status of the order
 					Bookdb bdb = new Bookdb();
-					bdb.addQuantity(bookId, qty);
+					bdb.addQuantity(bookId, qty);//call the method add quantity for add the quantity of the book
 					System.out.println("Your order was cancelled!");
 				}
 			} catch (Exception e) {
