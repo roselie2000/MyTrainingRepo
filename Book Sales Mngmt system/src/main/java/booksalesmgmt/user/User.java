@@ -7,6 +7,7 @@ public class User {
 	private String password;
 	private String email;
 	private int bookRev;
+	private int bookCan;
 	private String doorNo;
 	private String city;
 	private String district;
@@ -34,7 +35,7 @@ public class User {
 	}
 	
 	public String getPassword() {
-		return userName;
+		return password;
 	}
 	
 	public void setEmail(String email) {
@@ -51,6 +52,14 @@ public class User {
 	
 	public int getBookRev() {
 		return bookRev;
+	}
+	
+	public void setBookCan(int bookCan) {
+		this.bookCan = bookCan;
+	}
+	
+	public int getBookCan() {
+		return bookCan;
 	}
 	
 	public void setDoorno(String doorNo) {

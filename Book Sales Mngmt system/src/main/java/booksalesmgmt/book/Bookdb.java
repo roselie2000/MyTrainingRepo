@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import booksalesmgmt.ConnectionUtil;
+import booksalesmgmt.user.User;
 
 public class Bookdb implements BookDoa{
 
@@ -33,7 +34,7 @@ public class Bookdb implements BookDoa{
 		}
 	}
 
-	public void updateQuantity(String id, int quant) {
+	public void minusQuantity(String id, int quant) {
 		int quantdb = 0;
 		try {
 			Connection con = ConnectionUtil.getConnection();
@@ -45,11 +46,10 @@ public class Bookdb implements BookDoa{
 				quantdb = rs.getInt(1);
 				String upQuery = "update books set quantity = ? where book_id = ?";
 				PreparedStatement ps1 = con.prepareStatement(upQuery);
-				quant = quantdb - quant;
+				quant = Math.max(0, quantdb - quant);
 				ps1.setInt(1, quant);
 				ps1.setString(2, id);
 				ps1.executeUpdate();
-				System.out.println("updated!");
 			}
 			else {
 				System.out.println("There is no books in this book id. Please! check your book id");
@@ -59,6 +59,7 @@ public class Bookdb implements BookDoa{
 			System.out.println(e);
 		}
 	}
+	
 
 	public List<Books> getBookDetails() {
 		ArrayList<Books> data = new ArrayList<Books>(); //array creation in Students type
@@ -95,8 +96,95 @@ public class Bookdb implements BookDoa{
 		}
 		return data;
 	}
+
+	public void addQuantity(String id, int quant) {
+		int quantdb = 0;
+		try {
+			Connection con = ConnectionUtil.getConnection();
+			String getQuan = "select quantity from books where book_id = ?";
+			PreparedStatement ps = con.prepareStatement(getQuan);
+			ps.setString(1, id);
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()) {
+				quantdb = rs.getInt(1);
+				String upQuery = "update books set quantity = ? where book_id = ?";
+				PreparedStatement ps1 = con.prepareStatement(upQuery);
+				quant = quantdb + quant;
+				ps1.setInt(1, quant);
+				ps1.setString(2, id);
+				ps1.executeUpdate();
+				System.out.println("updated!");
+			}
+			else {
+				System.out.println("There is no books in this book id. Please! check your book id");
+			}
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
 		
 	}
+
+	public void getOrders() {
+		try {
+			Connection con = ConnectionUtil.getConnection();
+			String q = "select * from user_ordered";
+			PreparedStatement ps = con.prepareStatement(q);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				int id = rs.getInt(1);
+				String bid = rs.getString(2);
+				int qty = rs.getInt(3);
+				String status = rs.getString(4);
+				System.out.println(id + "  " + bid + "  " + qty + "  " + status);
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public List<User> getUserDetails() {
+		ArrayList<User> data = new ArrayList<User>();
+		try {
+			Connection con = ConnectionUtil.getConnection();
+			String q = "select * from users";
+			PreparedStatement ps = con.prepareStatement(q);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				int id = rs.getInt(1);
+				String uname = rs.getString(2);
+				String email = rs.getString(4);
+				int rev = rs.getInt(5);
+				String doorno = rs.getString(6);
+				String city = rs.getString(7);
+				String dist = rs.getString(8);
+				String state = rs.getString(9);
+				String name = rs.getString(10);
+				int can = rs.getInt(11);
+				User us = new User();
+				us.setUserId(id);
+				us.setUserName(uname);
+				us.setEmail(email);
+				us.setBookRev(rev);
+				us.setBookCan(can);
+				us.setDoorno(doorno);
+				us.setCity(city);
+				us.setDistrict(dist);
+				us.setState(state);
+				us.setName(name);
+				data.add(us);
+				System.out.println(id + "  " + uname + "  " + name + "  " + email + "  " + rev + "  " + 
+				"  " + can + "  " + doorno + "  " + city + "  " + dist + "  " + state);
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return data;
+	}
+		
+}
 
 	
 
