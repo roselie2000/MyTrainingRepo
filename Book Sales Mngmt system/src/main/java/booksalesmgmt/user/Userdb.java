@@ -34,6 +34,7 @@ public class Userdb implements UserDoa {
 			ps.setString(4, status);
 			ps.setInt(5, id);
 			ps.executeUpdate();
+			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -50,6 +51,7 @@ public class Userdb implements UserDoa {
 			ps.setString(1, status);
 			ps.setInt(2, orderId);
 			ps.executeUpdate();
+			con.close();
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,6 +87,7 @@ public class Userdb implements UserDoa {
 			ps1.executeUpdate();
 			System.out.println("Your are Successfully signed up!");
 			System.out.println("Your user ID is " + id);
+			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -99,6 +102,7 @@ public class Userdb implements UserDoa {
 			PreparedStatement ps = con.prepareStatement(q);
 			ps.setInt(1, userId);
 			ps.executeUpdate();
+			con.close();
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -134,11 +138,11 @@ public class Userdb implements UserDoa {
 					System.out.println("Enter 'q' for quite");
 					String msg = sn.next();
 					if (msg.equals("s")) {
-						search(us);//call the search method
+						searchBook(us);//call the search method
 					} else if (msg.equals("o")) {
-						order(us);//call the order method
+						orderBook(us);//call the order method
 					} else if (msg.equals("c")) {
-						cancel(us);//call the cancel method
+						cancelOrder(us);//call the cancel method
 					} else if (msg.equals("q")) {
 						System.out.println("Thank you for visiting!");
 					} else {
@@ -156,7 +160,7 @@ public class Userdb implements UserDoa {
 	}
 
 	//method for get the order from the user
-	public void order(User us) {
+	public void orderBook(User us) {
 		Scanner sn = new Scanner(System.in);
 		System.out.println("Enter the book ID :");
 		String bookId = sn.next();
@@ -199,13 +203,11 @@ public class Userdb implements UserDoa {
 							"Price :" + qty * price);
 							System.out.println("Your order id is " + orderId);
 							Bookdb bdb = new Bookdb();
-							bdb.minusQuantity(bookId, qty);//call the minus quantity method
+							bdb.minusBookQuantity(bookId, qty);//call the minus quantity method
 							System.out.println("Thank you");
 						}
 					}
 					else {
-						System.out.println("Your order is placed.");
-						System.out.println("book :" + bookId + "  " + "Quantity :" + qty + "  " + "Price :" + qty * price);
 						String upQuery = "update users set book_rev = ? where user_id = ?";
 						PreparedStatement ps1 = con.prepareStatement(upQuery);
 						int quant = Math.max(0, qty + us.getBookRev());
@@ -215,12 +217,14 @@ public class Userdb implements UserDoa {
 						us.setBookRev(quant);
 						String status = "Ordered";
 						int orderId = insertOrder(bookId, us, qty, status);
+						System.out.println("Your order is placed.");
 						System.out.println("book :" + bookId + "  " + "Quantity :" + qty + "  " + 
 								"Price :" + qty * price);
 								System.out.println("Your order id is " + orderId);
 						Bookdb bdb = new Bookdb();
-						bdb.minusQuantity(bookId, qty);
+						bdb.minusBookQuantity(bookId, qty);
 						System.out.println("Thank you");
+						con.close();
 					}					
 				} else {
 					System.out.println("Thank for visiting!");
@@ -234,22 +238,19 @@ public class Userdb implements UserDoa {
 	}
 
 	//method for search the books
-	public void search(User us) {
+	public void searchBook(User us) {
 		Scanner sn = new Scanner(System.in);
 		System.out.println("How do to want to search the book");
-		System.out.println("Enter 'id' for search the book id");
-		System.out.println("Enter 'name' for search the book name");
-		System.out.println("Enter 'author' for search the book author");
-		System.out.println("Enter 'publisher' for search the book publisher");
+		System.out.println("Enter 'name' for search the book by name");
+		System.out.println("Enter 'author' for search the book by author");
+		System.out.println("Enter 'publisher' for search the book by publisher");
+		System.out.println("Enter 'sub' for search the books by subject");
 		String choice = sn.next();
-		if(choice.equals("id") || choice.equals("name") || choice.equals("author") || choice.equals("publisher")) {
+		if(choice.equals("name") || choice.equals("author") || choice.equals("publisher") || choice.equals("sub")) {
 			System.out.println("Enter the " + choice + ":");
 			String val = sn.next();
 			String q = "";
-			if(choice.equals("id")) {
-				q = "select * from books where book_id = ?";
-			}
-			else if(choice.equals("name")) {
+			if(choice.equals("name")) {
 				q = "select * from books where book_name = ?";
 			}
 			else if(choice.equals("author")) {
@@ -257,6 +258,9 @@ public class Userdb implements UserDoa {
 			}
 			else if(choice.equals("publisher")) {
 				q = "select * from books where publisher = ?";
+			}
+			else if(choice.equals("sub")) {
+				q = "select * from books where subject = ?";
 			}
 			try {
 				System.out.println("Search");
@@ -296,8 +300,9 @@ public class Userdb implements UserDoa {
 					}
 					System.out.println("Are you want to by it!");
 					String msg = sn.next();
+					con.close();
 					if(msg.equals("y")) {
-						order(us);
+						orderBook(us);
 					}
 					else {
 						System.out.println("Thank you for visiting!");
@@ -318,7 +323,7 @@ public class Userdb implements UserDoa {
 	}
 
 	//method for cancel the order
-	public void cancel(User us) {
+	public void cancelOrder(User us) {
 		Scanner sn = new Scanner(System.in);
 		Validator vd = new Validator();
 		System.out.println("Enter your order ID :");
@@ -356,8 +361,9 @@ public class Userdb implements UserDoa {
 					status = "Cancelled";
 					updateOrder(id, status);//call the update order method for update the status of the order
 					Bookdb bdb = new Bookdb();
-					bdb.addQuantity(bookId, qty);//call the method add quantity for add the quantity of the book
+					bdb.addBookQuantity(bookId, qty);//call the method add quantity for add the quantity of the book
 					System.out.println("Your order was cancelled!");
+					con.close();
 				}
 			} catch (Exception e) {
 				e.printStackTrace();

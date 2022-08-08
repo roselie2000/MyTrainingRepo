@@ -49,7 +49,7 @@ public class BookTest {
 				System.out.println("Enter the available quantity of the book :");
 				int quantity = sn.nextInt();
 				bk.setQuantity(quantity);//set quantity
-				bdb.addBooks(bk);//call the addBooks method
+				bdb.addBookDetails(bk);//call the addBooks method
 			}			
 		}
 		else if(msg.equals("aq")) {
@@ -57,14 +57,14 @@ public class BookTest {
 			String bookId = sn.next();
 			System.out.println("Enter the quant :");
 			int quant = sn.nextInt();
-			bdb.addQuantity(bookId, quant);//call the addQuantity method
+			bdb.addBookQuantity(bookId, quant);//call the addQuantity method
 		}
 		else if(msg.equals("mq")) {
 			System.out.println("Enter the book id :");
 			String bookId = sn.next();
 			System.out.println("Enter the quant :");
 			int quant = sn.nextInt();
-			bdb.minusQuantity(bookId, quant);//call the minusQuantity method
+			bdb.minusBookQuantity(bookId, quant);//call the minusQuantity method
 		}
 		else if(msg.equals("d")) {
 			ArrayList<Books> data = new ArrayList<Books>(); 
@@ -78,7 +78,7 @@ public class BookTest {
 			}
 		}
 		else if(msg.equals("o")) {
-			bdb.getOrders();//call getOrders method
+			bdb.getBookOrders();//call getOrders method
 		}
 		else if(msg.equals("u")) {
 			bdb.getUserDetails();//call getUserDetails method

@@ -5,13 +5,13 @@ import booksalesmgmt.user.User;
 
 public interface BookDoa {
 
-	public void addBooks(Books bk);//adding books
+	public void addBookDetails(Books bk);//adding books
 	
-	public void minusQuantity(String id, int quant);//reduce the quantity of the books
+	public void minusBookQuantity(String id, int quant);//reduce the quantity of the books
 	
-	public void addQuantity(String id, int quant);//add the quantity of the books
+	public void addBookQuantity(String id, int quant);//add the quantity of the books
 	
-	public void getOrders();//get the orders details
+	public void getBookOrders();//get the orders details
 	
 	public void getOrderedUser();//get the ordered users details
 	

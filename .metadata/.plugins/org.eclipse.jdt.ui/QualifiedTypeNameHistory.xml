@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="bankingsystem.Customrdb"/>
-    <fullyQualifiedTypeName name="bankingsystem.BankDoa"/>
-    <fullyQualifiedTypeName name="bankingsystem.BankAndCust"/>
     <fullyQualifiedTypeName name="java.beans.Statement"/>
     <fullyQualifiedTypeName name="java.sql.Statement"/>
     <fullyQualifiedTypeName name="bankingsystem.CustomerDoa"/>
-    <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="sample.ConnectionUtil"/>
     <fullyQualifiedTypeName name="bankingsystem.ConnectionUtil"/>
-    <fullyQualifiedTypeName name="javax.xml.validation.Validator"/>
     <fullyQualifiedTypeName name="bankingsystem.Customer"/>
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="filemgmt.test.FileOperationTest"/>
@@ -38,26 +33,31 @@
     <fullyQualifiedTypeName name="java.nio.file.Path"/>
     <fullyQualifiedTypeName name="java.nio.file.Files"/>
     <fullyQualifiedTypeName name="java.nio.file.Paths"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="com.chainsys.hackerearth.DigitCube"/>
     <fullyQualifiedTypeName name="com.chainsys.threadPack.ThreadTest"/>
     <fullyQualifiedTypeName name="com.chainsys.threadPack.MyThread"/>
     <fullyQualifiedTypeName name="com.chainsys.threadPack.Thread1"/>
     <fullyQualifiedTypeName name="java.lang.Thread"/>
-    <fullyQualifiedTypeName name="java.lang.Math"/>
     <fullyQualifiedTypeName name="booksalesmgmt.book.BookDoa"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="booksalesmgmt.user.UserDoa"/>
     <fullyQualifiedTypeName name="java.lang.FunctionalInterface"/>
     <fullyQualifiedTypeName name="booksalesmgmt.user.Userdb"/>
-    <fullyQualifiedTypeName name="java.lang.Boolean"/>
-    <fullyQualifiedTypeName name="booksalesmgmt.user.User"/>
+    <fullyQualifiedTypeName name="booksalesmgmt.book.Bookdb"/>
+    <fullyQualifiedTypeName name="java.awt.print.Book"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
-    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="booksalesmgmt.orders.Orderdb"/>
+    <fullyQualifiedTypeName name="booksalesmgmt.book.Books"/>
+    <fullyQualifiedTypeName name="java.lang.Boolean"/>
+    <fullyQualifiedTypeName name="javax.xml.validation.Validator"/>
+    <fullyQualifiedTypeName name="booksalesmgmt.user.User"/>
+    <fullyQualifiedTypeName name="booksalesmgmt.orders.Orders"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="booksalesmgmt.Validator"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="booksalesmgmt.ConnectionUtil"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-    <fullyQualifiedTypeName name="booksalesmgmt.book.Bookdb"/>
-    <fullyQualifiedTypeName name="java.awt.print.Book"/>
-    <fullyQualifiedTypeName name="booksalesmgmt.book.Books"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 </qualifiedTypeNameHistroy>

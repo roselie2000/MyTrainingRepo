@@ -8,9 +8,9 @@ public interface UserDoa {
 	
 	public void logout(int userId);//delete the user from the database
 	
-	public void order(User us);//get the order from the user
+	public void orderBook(User us);//get the order from the user
 	
-	public void search(User us);//display the book details
+	public void searchBook(User us);//display the book details
 	
-	public void cancel(User us);//cancel the order
+	public void cancelOrder(User us);//cancel the order
 }

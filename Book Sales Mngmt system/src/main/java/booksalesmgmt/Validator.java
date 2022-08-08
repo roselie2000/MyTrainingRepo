@@ -53,7 +53,7 @@ public class Validator {
 	
 	//method for check the email
 	public boolean checkEmail(String email) {
-		if(!email.endsWith("@gmail.com") && (!email.startsWith("@gmail.com")) && (!email.isBlank())) {
+		if(!email.endsWith("@gmail.com") || (email.startsWith("@gmail.com")) || (email.isBlank()) || (email.length() < 15)) {
 			System.out.println("Please!, enter a valid emil address!");
 			return false;
 		}

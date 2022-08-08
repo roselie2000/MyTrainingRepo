@@ -13,7 +13,7 @@ import booksalesmgmt.user.User;
 public class Bookdb implements BookDoa{
 
 	//method for add the book details to the database
-	public void addBooks(Books bk) {
+	public void addBookDetails(Books bk) {
 		try {
 			Connection con = ConnectionUtil.getConnection();
 			//insert query
@@ -38,7 +38,7 @@ public class Bookdb implements BookDoa{
 	}
 
 	//method for reduce the quantity of the books
-	public void minusQuantity(String id, int quant) {
+	public void minusBookQuantity(String id, int quant) {
 		int quantdb = 0;
 		try {
 			Connection con = ConnectionUtil.getConnection();
@@ -102,7 +102,7 @@ public class Bookdb implements BookDoa{
 	}
 
 	//method for add the quantity of the books
-	public void addQuantity(String id, int quant) {
+	public void addBookQuantity(String id, int quant) {
 		int quantdb = 0;
 		try {
 			Connection con = ConnectionUtil.getConnection();
@@ -131,7 +131,7 @@ public class Bookdb implements BookDoa{
 		}
 	}
 
-	public void getOrders() {
+	public void getBookOrders() {
 		try {
 			Connection con = ConnectionUtil.getConnection();
 			//query for select all details of the orders from the users_ordered table
