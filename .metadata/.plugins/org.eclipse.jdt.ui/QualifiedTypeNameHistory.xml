@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.beans.Statement"/>
-    <fullyQualifiedTypeName name="java.sql.Statement"/>
-    <fullyQualifiedTypeName name="bankingsystem.CustomerDoa"/>
-    <fullyQualifiedTypeName name="java.sql.Date"/>
-    <fullyQualifiedTypeName name="sample.ConnectionUtil"/>
-    <fullyQualifiedTypeName name="bankingsystem.ConnectionUtil"/>
-    <fullyQualifiedTypeName name="bankingsystem.Customer"/>
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="filemgmt.test.FileOperationTest"/>
     <fullyQualifiedTypeName name="filemgmt.FileOpereationClass"/>
@@ -55,9 +48,16 @@
     <fullyQualifiedTypeName name="booksalesmgmt.orders.Orders"/>
     <fullyQualifiedTypeName name="java.lang.Math"/>
     <fullyQualifiedTypeName name="booksalesmgmt.Validator"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="booksalesmgmt.ConnectionUtil"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="java.util.stream.Stream"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+    <fullyQualifiedTypeName name="java.util.stream.IntStream"/>
+    <fullyQualifiedTypeName name="java.util.stream.Collector"/>
+    <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.util.Optional"/>
 </qualifiedTypeNameHistroy>

@@ -9,11 +9,13 @@ import booksalesmgmt.book.Books;
 
 public class BookTest {
 
+	private static Scanner sn;
+
 	public static void main(String[] args) {
 		Books bk = new Books();
 		Bookdb bdb = new Bookdb();
 		Validator vd = new Validator();
-		Scanner sn = new Scanner(System.in);
+		sn = new Scanner(System.in);
 		System.out.println("Enter 'a' for add new books");
 		System.out.println("Enter 'mq' for reduce the quantity of a book");
 		System.out.println("Enter 'aq' for add the quantity of a book");

@@ -13,6 +13,8 @@ import booksalesmgmt.book.Books;
 
 public class Userdb implements UserDoa {
 	
+	private Scanner sn;
+
 	//method for insert the orders
 	public int insertOrder(String bookId, User us, int qty, String status) {
 		int id = 0;
@@ -130,7 +132,7 @@ public class Userdb implements UserDoa {
 					us.setPassword(passwd);
 					us.setBookRev(rs.getInt(3));
 					us.setBookCan(rs.getInt(4));
-					Scanner sn = new Scanner(System.in);
+					sn = new Scanner(System.in);
 					System.out.println("you want to search book or place order! or quite");
 					System.out.println("Enter 's' for search");
 					System.out.println("Enter 'o' for place the order");
@@ -161,7 +163,7 @@ public class Userdb implements UserDoa {
 
 	//method for get the order from the user
 	public void orderBook(User us) {
-		Scanner sn = new Scanner(System.in);
+		sn = new Scanner(System.in);
 		System.out.println("Enter the book ID :");
 		String bookId = sn.next();
 		try {
@@ -239,7 +241,7 @@ public class Userdb implements UserDoa {
 
 	//method for search the books
 	public void searchBook(User us) {
-		Scanner sn = new Scanner(System.in);
+		sn = new Scanner(System.in);
 		System.out.println("How do to want to search the book");
 		System.out.println("Enter 'name' for search the book by name");
 		System.out.println("Enter 'author' for search the book by author");
@@ -324,7 +326,7 @@ public class Userdb implements UserDoa {
 
 	//method for cancel the order
 	public void cancelOrder(User us) {
-		Scanner sn = new Scanner(System.in);
+		sn = new Scanner(System.in);
 		Validator vd = new Validator();
 		System.out.println("Enter your order ID :");
 		int id = sn.nextInt();

@@ -8,11 +8,13 @@ import booksalesmgmt.user.Userdb;
 
 public class UserTest {
 
+	private static Scanner sn;
+
 	public static void main(String[] args) {
 		User us = new User();
 		Userdb udb = new Userdb();
 		Validator vd = new Validator();
-		Scanner sn = new Scanner(System.in);
+		sn = new Scanner(System.in);
 		System.out.println("Enter 's' for sign up");
 		System.out.println("Enter 'l' for login");
 		System.out.println("Enter 'lo' for logout");
